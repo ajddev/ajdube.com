@@ -1,100 +1,207 @@
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import img from "../assets/Images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg"
-import LogoComponent from '../subComponents/LogoComponent'
-import SocialIcons  from '../subComponents/SocialIcons'
-import PowerButton  from '../subComponents/PowerButton'
+import React from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { DarkTheme } from "./Themes";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import LogoComponent from "../subComponents/LogoComponent";
+import SocialIcons from "../subComponents/SocialIcons";
+import BigTitle from "../subComponents/BigTitle";
 
-import {Blogs} from '../data/BlogData';
-import BlogComponent from './BlogComponent'
-import AnchorComponent from '../subComponents/Anchor'
-import BigTitle from "../subComponents/BigTitlte"
-import { motion } from 'framer-motion'
+const Box = styled.div`
+  background-color: ${(props) => props.theme.body};
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 
-
-const MainContainer = styled(motion.div)`
-background-image: url(${img});
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-`
-const Container = styled.div`
-background-color: ${props => `rgba(${props.theme.bodyRgba},0.8)`};
-width: 100%;
-height:auto;
-
-position: relative;
-padding-bottom: 5rem;
-`
-
-const Center = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-padding-top: 10rem;
-`
-
-const Grid = styled.div`
-display: grid;
-grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
-grid-gap: calc(1rem + 2vw);
-`
-
-// Framer-motion config
-const container = {
-
-    hidden: {opacity:0},
-    show: {
-      opacity:1,
-  
-      transition:{
-        staggerChildren: 0.5,
-        duration: 0.5,
-      }
-    }
-  
+  @media (max-width: 800px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+`;
+
+const Main = styled.div`
+  border: 2px solid ${(props) => props.theme.text};
+  color: ${(props) => props.theme.text};
+  padding: 2rem;
+  width: 50vw;
+  height: 60vh;
+  z-index: 3;
+  line-height: 1.5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(0.6rem + 1vw);
+  backdrop-filter: blur(4px);
+
+  position: absolute;
+  left: calc(5rem + 5vw);
+  top: 10rem;
+
+  font-family: "Ubuntu Mono", monospace;
+  font-style: italic;
+
+  @media (max-width: 800px) {
+    position: initial;
+    line-height: 1.25;
+  }
+`;
+
+const Contact = styled(NavLink)`
+  color: ${(props) => props.theme.text};
+  position: absolute;
+  top: 2rem;
+  right: calc(1rem + 2vw);
+  text-decoration: none;
+  z-index: 1;
+  @media (max-width: 800px) {
+    color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+
+    h2 {
+      font-size: 1.25rem;
+    }
+  }
+`;
+
+const BLOG = styled(NavLink)`
+  color: ${(props) => props.theme.text};
+  position: absolute;
+  top: 50%;
+  right: calc(1rem + 2vw);
+  transform: rotate(90deg) translate(-50%, -50%);
+  text-decoration: none;
+  z-index: 1;
+  @media (max-width: 800px) {
+    color: ${(props) => props.theme.text};
+    h2 {
+      font-size: 1rem;
+    }
+  }
+`;
+
+const WORK = styled(NavLink)`
+  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  position: absolute;
+  top: 50%;
+  left: calc(1rem + 2vw);
+  transform: translate(-50%, -50%) rotate(-90deg);
+  text-decoration: none;
+  z-index: 1;
+  @media (max-width: 800px) {
+    color: ${(props) => props.theme.text};
+    h2 {
+      font-size: 1rem;
+    }
+  }
+`;
+const BottomBar = styled.div`
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-evenly;
+`;
+const ABOUT = styled(NavLink)`
+  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  text-decoration: none;
+  z-index: 1;
+  @media (max-width: 800px) {
+    color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+    h2 {
+      font-size: 1rem;
+    }
+  }
+`;
+const SKILLS = styled(NavLink)`
+  color: ${(props) => props.theme.text};
+  text-decoration: none;
+  z-index: 1;
+
+  @media (max-width: 800px) {
+    h2 {
+      font-size: 1rem;
+    }
+  }
+`;
 
 const BlogPage = () => {
-
-    const [numbers, setNumbers] = useState(0);
-
-    useEffect(() => {
-        let num = (window.innerHeight - 70)/30;
-        setNumbers(parseInt(num));
-    }, [])
-
-
-    return (
-        <MainContainer
-        variants={container}
-        initial='hidden'
-        animate='show'
-        exit={{
-            opacity:0, transition:{duration: 0.5}
-        }}
+  return (
+    <ThemeProvider theme={DarkTheme}>
+      <Box>
+        <LogoComponent theme="dark" />
+        <SocialIcons theme="dark" override="#dad271" />
+        <Contact
+          target="_blank"
+          to={{ pathname: "mailto:dubedeveloper@gmail.com" }}
         >
-            <Container>
-                <LogoComponent />
-                <PowerButton />
-                <SocialIcons />
-                <AnchorComponent number={numbers}/>
-<Center>
-<Grid>
+          <motion.h2
+            initial={{ y: -200 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", duration: 1 }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Hire me!
+          </motion.h2>
+        </Contact>
+        <BLOG to="/blog">
+          <motion.h2
+            initial={{ y: -200 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", duration: 3 }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Blog
+          </motion.h2>
+        </BLOG>
+        <WORK to="/work">
+          <motion.h2
+            initial={{ y: -200 }}
+            animate={{ y: 0 }}
+            transition={{ type: "spring", duration: 2 }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Work
+          </motion.h2>
+        </WORK>
 
-{
-    Blogs.map(blog => {
-        return <BlogComponent key={blog.id} blog={blog} />
-    })
-}
-</Grid>
+        <BottomBar>
+          <ABOUT to="/about">
+            <motion.h2
+              initial={{ y: 200 }}
+              animate={{ y: 0 }}
+              transition={{ type: "spring", duration: 4 }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              About
+            </motion.h2>
+          </ABOUT>
 
-</Center>
-<BigTitle text="BLOG" top="5rem" left="5rem" />
-            </Container>
-        </MainContainer>
-    )
-}
+          <SKILLS to="/skills">
+            <motion.h2
+              initial={{ y: 200 }}
+              animate={{ y: 0 }}
+              transition={{ type: "spring", duration: 5 }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              My Skills
+            </motion.h2>
+          </SKILLS>
+        </BottomBar>
+        <BigTitle text="BLOG" top="5rem" left="5rem" />
+        <Main>coming soon...</Main>
+      </Box>
+    </ThemeProvider>
+  );
+};
 
-export default BlogPage
+export default BlogPage;

@@ -1,90 +1,131 @@
-import { motion } from 'framer-motion'
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import styled from 'styled-components'
-import { Facebook, Github, Twitter, YouTube } from '../components/AllSvgs'
-import {DarkTheme} from '../components/Themes'
-
+import React from "react";
+import { motion } from "framer-motion";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import { LinkedIn, Github, Twitter, Dribbble } from "../components/AllSVGs";
+import { DarkTheme } from "../components/Themes";
 
 const Icons = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-position: fixed;
-bottom: 0;
-left: 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 2rem;
 
-z-index:3;
+  z-index: 3;
 
-&>*:not(:last-child){
+  & > *:not(:last-child) {
     margin: 0.5rem 0;
-}
+  }
 
-`
+  svg.nav-link {
+    fill: ${(props) =>
+      props.color === "dark" ? DarkTheme.body : DarkTheme.text};
+    fill: ${(props) => props.override} !important;
+  }
+
+  @media (max-width: 800px) {
+    left: 1rem;
+    & > *:not(:last-child) {
+      margin: 0.2rem 0;
+    }
+    svg.nav-link {
+      width: 20px;
+      fill: ${(props) =>
+        props.color === "dark" ? DarkTheme.text : DarkTheme.body};
+      fill: ${(props) => props.override} !important;
+    }
+  }
+`;
 
 const Line = styled(motion.span)`
-width: 2px;
-height: 8rem;
-background-color: ${props => props.color === 'dark' ? DarkTheme.text : DarkTheme.body  };
-`
+  width: 2px;
+  height: 8rem;
+  background-color: ${(props) =>
+    props.color === "dark" ? DarkTheme.text : DarkTheme.body};
+
+  @media (max-width: 800px) {
+    background-color: ${(props) =>
+      props.color === "dark" ? DarkTheme.body : DarkTheme.text};
+    background-color: ${(props) => props.override} !important;
+  }
+`;
 
 const SocialIcons = (props) => {
-    return (
-        <Icons>
-            <motion.div
-            initial={{transform:"scale(0)"}}
-            animate={{scale:[0,1,1.5,1]}}
-            transition={{type:'spring', duration:1, delay:1}}
-            >
-                <NavLink style={{color:'inherit'}}  target="_blank"   to={{pathname:"https://github.com/codebucks27"}}>
-                    <Github width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text  : DarkTheme.body  } />
-                </NavLink>
-            </motion.div>
-            <motion.div
-            initial={{transform:"scale(0)"}}
-            animate={{scale:[0,1,1.5,1]}}
-            transition={{type:'spring', duration:1, delay:1.2}}
-            >
-                <NavLink style={{color:'inherit'}}  target="_blank"   to={{pathname:"https://twitter.com/code_bucks"}}>
-                    <Twitter width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text  : DarkTheme.body  } />
-                </NavLink>
-            </motion.div>
-            <motion.div
-            initial={{transform:"scale(0)"}}
-            animate={{scale:[0,1,1.5,1]}}
-            transition={{type:'spring', duration:1, delay:1.4}}
-            >
-                <NavLink style={{color:'inherit'}}  target="_blank"   to={{pathname:"https://facebook.com/codebucks27"}}>
-                    <Facebook width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text  : DarkTheme.body  } />
-                </NavLink>
-            </motion.div>
-            <motion.div
-            initial={{transform:"scale(0)"}}
-            animate={{scale:[0,1,1.5,1]}}
-            transition={{type:'spring', duration:1, delay:1.6}}
-            >
-                <NavLink style={{color:'inherit'}}  target="_blank"   to={{pathname:"https://youtube.com"}}>
-                    <YouTube width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text  : DarkTheme.body  } />
-                </NavLink>
-            </motion.div>
+  return (
+    <Icons override={props.override}>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1 }}
+      >
+        <NavLink
+          style={{ color: "inherit" }}
+          target="_blank"
+          to={{ pathname: "https://www.linkedin.com/in/ajdube/" }}
+        >
+          <LinkedIn width={25} height={25} className="nav-link" />
+        </NavLink>
+      </motion.div>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1.2 }}
+      >
+        <NavLink
+          style={{ color: "inherit" }}
+          target="_blank"
+          to={{ pathname: "https://github.com/ajddev" }}
+        >
+          <Github width={25} height={25} className="nav-link" />
+        </NavLink>
+      </motion.div>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1.4 }}
+      >
+        <NavLink
+          style={{ color: "inherit" }}
+          target="_blank"
+          to={{ pathname: "https://twitter.com/ajddev" }}
+        >
+          <Twitter width={25} height={25} className="nav-link" />
+        </NavLink>
+      </motion.div>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1.6 }}
+      >
+        <NavLink
+          style={{ color: "inherit" }}
+          target="_blank"
+          to={{ pathname: "https://dribbble.com/ajdube" }}
+        >
+          <Dribbble width={25} height={25} className="nav-link" />
+        </NavLink>
+      </motion.div>
 
-            <Line color={props.theme}
+      <Line
+        override={props.override}
+        color={props.theme}
+        initial={{
+          height: 0,
+        }}
+        animate={{
+          height: "6rem",
+        }}
+        transition={{
+          type: "spring",
+          duration: 1,
+          delay: 0.8,
+        }}
+      />
+    </Icons>
+  );
+};
 
-initial={
-    {
-        height:0
-    }
-}
-animate={{
-    height: '8rem'
-}}
-transition={{
-    type:'spring', duration:1, delay:0.8
-}}
-            />
-        </Icons>
-    )
-}
-
-export default SocialIcons
+export default SocialIcons;
