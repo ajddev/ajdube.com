@@ -2,7 +2,7 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { NavLink } from "react-router-dom";
 import { lightTheme } from "./Themes";
-import { Design, Develop } from "./AllSVGs";
+// import { Design, Develop } from "./AllSVGs";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import ParticleComponent from "../subComponents/ParticleComponent";
@@ -252,16 +252,17 @@ const MySkillsPage = () => {
         </BottomBar>
         <Main>
           <Title>
-            <Design width={40} height={40} /> Designer
+            {/* <Design width={40} height={40} />  */}
+            Designer
           </Title>
           <Description>
-            I love to create design which speaks, Keep it clean, minimal and
-            simple.
+            I enjoy designing websites and software that is clean and simple. I
+            have a passion for minimalism and the KISS principle.
           </Description>
           <Description>
             <strong>I like to Design</strong>
             <ul>
-              <li>Web Design</li>
+              <li>Modern Websites</li>
               <li>Mobile Apps</li>
             </ul>
           </Description>
@@ -274,11 +275,12 @@ const MySkillsPage = () => {
         </Main>
         <Main>
           <Title>
-            <Develop width={40} height={40} /> Develop
+            {/* <Develop width={40} height={40} />  */}
+            Develop
           </Title>
           <Description>
-            I value business or brand for which I'm creating, thus I enjoy
-            bringing new ideas to life.
+            I like bringing ideas to life with code. I am happy to help
+            businesses and brands grow in the ever-changing digital world.
           </Description>
           <Description>
             <strong>Skills</strong>
