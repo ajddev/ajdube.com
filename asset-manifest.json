@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ajdube.com/static/css/main.c54b88c5.chunk.css",
-    "main.js": "/ajdube.com/static/js/main.d2ec8c05.chunk.js",
-    "main.js.map": "/ajdube.com/static/js/main.d2ec8c05.chunk.js.map",
+    "main.js": "/ajdube.com/static/js/main.cee29c48.chunk.js",
+    "main.js.map": "/ajdube.com/static/js/main.cee29c48.chunk.js.map",
     "runtime-main.js": "/ajdube.com/static/js/runtime-main.8dc0d873.js",
     "runtime-main.js.map": "/ajdube.com/static/js/runtime-main.8dc0d873.js.map",
     "static/css/2.679831fc.chunk.css": "/ajdube.com/static/css/2.679831fc.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.679831fc.chunk.css",
     "static/js/2.ac30a7f4.chunk.js",
     "static/css/main.c54b88c5.chunk.css",
-    "static/js/main.d2ec8c05.chunk.js"
+    "static/js/main.cee29c48.chunk.js"
   ]
 }
