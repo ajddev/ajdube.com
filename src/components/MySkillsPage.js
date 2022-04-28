@@ -256,7 +256,7 @@ const MySkillsPage = () => {
             Designer
           </Title>
           <Description>
-            I enjoy designing websites and software that is clean and simple. I
+            I enjoy designing websites and software that are clean and simple. I
             have a passion for minimalism and the KISS principle.
           </Description>
           <Description>
