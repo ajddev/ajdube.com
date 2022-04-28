@@ -101,7 +101,7 @@ const Description = styled.div`
   }
 `;
 
-const Contact = styled(NavLink)`
+const Contact = styled.div`
   color: ${(props) => props.theme.text};
   position: absolute;
   top: 2rem;
@@ -193,6 +193,7 @@ const MySkillsPage = () => {
             href="mailto:anthony.j.dube@gmail.com"
             target="_blank"
             rel="noreferrer"
+            style={{ color: "inherit" }}
           >
             <motion.h2
               initial={{ y: -200 }}
