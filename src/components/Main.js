@@ -203,19 +203,22 @@ const Main = () => {
               <span>Click here..</span>
             </Center>
 
-            <Contact
-              target="_blank"
-              to={{ pathname: "mailto:dubedeveloper@gmail.com" }}
-            >
-              <motion.h2
-                initial={{ y: -200 }}
-                animate={{ y: 0 }}
-                transition={{ type: "spring", duration: 1 }}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
+            <Contact>
+              <a
+                href="mailto:anthony.j.dube@gmail.com"
+                target="_blank"
+                rel="noreferrer"
               >
-                Hire me!
-              </motion.h2>
+                <motion.h2
+                  initial={{ y: -200 }}
+                  animate={{ y: 0 }}
+                  transition={{ type: "spring", duration: 1 }}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Hire me!
+                </motion.h2>
+              </a>
             </Contact>
 
             <BLOG to="/blog">
