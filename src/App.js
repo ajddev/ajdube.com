@@ -10,17 +10,6 @@ import BlogPage from "./components/BlogPage";
 import WorkPage from "./components/WorkPage";
 import MySkillsPage from "./components/MySkillsPage";
 
-const pageTransition = {
-  inX: {
-    opacity: 1,
-    x: 0,
-  },
-  outX: {
-    opacity: 0,
-    x: "-100vw",
-  },
-};
-
 function App() {
   const location = useLocation();
   return (

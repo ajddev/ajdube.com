@@ -171,7 +171,7 @@ const pageTransition = {
 const Main = () => {
   const [loading, setLoading] = useState(false);
   const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
+  //const handleClick = () => setClick(!click);
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
