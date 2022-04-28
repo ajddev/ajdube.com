@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LinkedIn, Github, Twitter, Dribbble } from "../components/AllSVGs";
 import { DarkTheme } from "../components/Themes";
 
@@ -61,52 +61,52 @@ const SocialIcons = (props) => {
         animate={{ scale: [0, 1, 1.5, 1] }}
         transition={{ type: "spring", duration: 1, delay: 1 }}
       >
-        <NavLink
+        <Link
           style={{ color: "inherit" }}
           target="_blank"
           to={{ pathname: "https://www.linkedin.com/in/ajdube/" }}
         >
           <LinkedIn width={25} height={25} className="nav-link" />
-        </NavLink>
+        </Link>
       </motion.div>
       <motion.div
         initial={{ transform: "scale(0)" }}
         animate={{ scale: [0, 1, 1.5, 1] }}
         transition={{ type: "spring", duration: 1, delay: 1.2 }}
       >
-        <NavLink
+        <Link
           style={{ color: "inherit" }}
           target="_blank"
           to={{ pathname: "https://github.com/ajddev" }}
         >
           <Github width={25} height={25} className="nav-link" />
-        </NavLink>
+        </Link>
       </motion.div>
       <motion.div
         initial={{ transform: "scale(0)" }}
         animate={{ scale: [0, 1, 1.5, 1] }}
         transition={{ type: "spring", duration: 1, delay: 1.4 }}
       >
-        <NavLink
+        <Link
           style={{ color: "inherit" }}
           target="_blank"
           to={{ pathname: "https://twitter.com/ajddev" }}
         >
           <Twitter width={25} height={25} className="nav-link" />
-        </NavLink>
+        </Link>
       </motion.div>
       <motion.div
         initial={{ transform: "scale(0)" }}
         animate={{ scale: [0, 1, 1.5, 1] }}
         transition={{ type: "spring", duration: 1, delay: 1.6 }}
       >
-        <NavLink
+        <Link
           style={{ color: "inherit" }}
           target="_blank"
           to={{ pathname: "https://dribbble.com/ajdube" }}
         >
           <Dribbble width={25} height={25} className="nav-link" />
-        </NavLink>
+        </Link>
       </motion.div>
 
       <Line
