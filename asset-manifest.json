@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/ajdube.com/static/css/main.c54b88c5.chunk.css",
-    "main.js": "/ajdube.com/static/js/main.45952064.chunk.js",
-    "main.js.map": "/ajdube.com/static/js/main.45952064.chunk.js.map",
+    "main.js": "/ajdube.com/static/js/main.9ee1137b.chunk.js",
+    "main.js.map": "/ajdube.com/static/js/main.9ee1137b.chunk.js.map",
     "runtime-main.js": "/ajdube.com/static/js/runtime-main.8dc0d873.js",
     "runtime-main.js.map": "/ajdube.com/static/js/runtime-main.8dc0d873.js.map",
     "static/css/2.679831fc.chunk.css": "/ajdube.com/static/css/2.679831fc.chunk.css",
-    "static/js/2.ac30a7f4.chunk.js": "/ajdube.com/static/js/2.ac30a7f4.chunk.js",
-    "static/js/2.ac30a7f4.chunk.js.map": "/ajdube.com/static/js/2.ac30a7f4.chunk.js.map",
+    "static/js/2.471344ab.chunk.js": "/ajdube.com/static/js/2.471344ab.chunk.js",
+    "static/js/2.471344ab.chunk.js.map": "/ajdube.com/static/js/2.471344ab.chunk.js.map",
     "index.html": "/ajdube.com/index.html",
     "static/css/2.679831fc.chunk.css.map": "/ajdube.com/static/css/2.679831fc.chunk.css.map",
     "static/css/main.c54b88c5.chunk.css.map": "/ajdube.com/static/css/main.c54b88c5.chunk.css.map",
-    "static/js/2.ac30a7f4.chunk.js.LICENSE.txt": "/ajdube.com/static/js/2.ac30a7f4.chunk.js.LICENSE.txt",
+    "static/js/2.471344ab.chunk.js.LICENSE.txt": "/ajdube.com/static/js/2.471344ab.chunk.js.LICENSE.txt",
     "static/media/me.3533751d.png": "/ajdube.com/static/media/me.3533751d.png",
     "static/media/vector.c0c79acd.svg": "/ajdube.com/static/media/vector.c0c79acd.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8dc0d873.js",
     "static/css/2.679831fc.chunk.css",
-    "static/js/2.ac30a7f4.chunk.js",
+    "static/js/2.471344ab.chunk.js",
     "static/css/main.c54b88c5.chunk.css",
-    "static/js/main.45952064.chunk.js"
+    "static/js/main.9ee1137b.chunk.js"
   ]
 }
